@@ -10,7 +10,6 @@ from src.mcqgen.MCQGenerator import final_chain
 import streamlit as st 
 
 
-### Loading the JSON file into a python file object. Why ?
 with open ("Response.json", "r") as file : 
     RESPONSE_JSON = json.load(file)
 

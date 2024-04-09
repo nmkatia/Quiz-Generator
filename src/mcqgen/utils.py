@@ -1,12 +1,7 @@
-### Hello, I ma ver very very excited to work on you : ) : ) Hi Hi Hi
-
 import json 
 import os 
 import PyPDF2
 import traceback2 
-
-
-###1 : File reading fiunction 
 
 
 def file_reader(file): 
@@ -18,7 +13,7 @@ def file_reader(file):
                 text+= page.extract_text()
                 return text 
         except Exception as e: 
-            raise Exception("Error Reading the Pdf file") ### You basically want ot read a pdf file into a big string, otherwise, error  
+            raise Exception("Error Reading the Pdf file")
         
     elif file.name.endswith(".txt"): 
         return file.read().decode("utf-8") 

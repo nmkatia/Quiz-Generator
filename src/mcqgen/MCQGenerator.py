@@ -1,6 +1,3 @@
-## In this nottebook, I will do my modular coding
-
-##1 : My imports
 from dotenv import load_dotenv
 import os
 from langchain.llms import OpenAI
@@ -15,10 +12,10 @@ from src.mcqgen.utils import file_reader, get_table_data
 
 
 
-##Loading the env variables from the .env file
 load_dotenv()
 
 ### Acccesing the env variables using os.environ.get()
+
 key = os.environ.get("OPENAI_API_KEY")
 
 ### Instantinating my LLM
@@ -42,10 +39,7 @@ prompt1 = PromptTemplate(
     input_variables = ["text", "number", "subject", "tone", "response_json"],
     template = TEMPLATE1)
 
-
-
-
-### My LLMchain (llm+ prompt)
+### My LLMchain (llm+prompt)
 quiz_chain = LLMChain(llm= llm, prompt = prompt1, output_key= "quiz", verbose= True)
 
 
@@ -61,7 +55,6 @@ Check from an expert English Writer of the above quiz
 """
 
 ### My Review Prompt
-
 prompt2= PromptTemplate(
     input_variables= ["subject", "quiz"], 
     template=TEMPLATE2
